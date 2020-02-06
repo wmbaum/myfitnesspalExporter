@@ -1,5 +1,5 @@
 function debug(a) {
-    var b = "http://foodfastfit.com/" + (-1 !== _.indexOf(["pjhcgkchlaggpkjioockflccjfkmnccn", "fomhleglpcohdnniiafhekkaakdgdkdh", "glpkdgpldbbdpjbpimehpkpgdicibgpi"], chrome.runtime.id) ? "" : "_/") + "myfitnesspal-x-foodfastfit/";
+    var b = "https://foodfastfit.com/" + (-1 !== _.indexOf(["pjhcgkchlaggpkjioockflccjfkmnccn", "fomhleglpcohdnniiafhekkaakdgdkdh", "glpkdgpldbbdpjbpimehpkpgdicibgpi"], chrome.runtime.id) ? "" : "_/") + "myfitnesspal-x-foodfastfit/";
     _.isObject(a) || (a = {
         message: a
     });
@@ -26,7 +26,7 @@ function debugSelector() {
 }
 
 function main(a) {
-    var b = "http://foodfastfit.com/myfitnesspal-x-foodfastfit/",
+    var b = "https://foodfastfit.com/myfitnesspal-x-foodfastfit/",
         c = "en";
     debugSelector('#preference_language_setting [selected="selected"]').each(function() {
         c = $(this).val()
@@ -39,7 +39,7 @@ function main(a) {
     debugSelector("optgroup").each(function(b) {
         debugSelector("option", this).each(function() {
             var f = $(this).text(),
-                g = "http://www.myfitnesspal.com" + ("en" !== c ? "/" + c : "") + "/reports/results/" + ["progress", "nutrition", "fitness"][b] + "/" + $(this).val() + "/" + a.exporting_period + ".json?report_name=" + f;
+                g = "https://www.myfitnesspal.com" + ("en" !== c ? "/" + c : "") + "/reports/results/" + ["progress", "nutrition", "fitness"][b] + "/" + $(this).val() + "/" + a.exporting_period + ".json?report_name=" + encodeURI(f);
             $("<li><a>" + f + "</a><span></span></li>").click(function() {
                 debugSelector("span", this).text(": Exporting...");
                 var a = e($(this));

@@ -2,8 +2,8 @@
 "update_url": "https://clients2.google.com/service/update2/crx",
 
 	"manifest_version": 2,
-	"name": "MyFitnessPal Data Exporter by FOODFASTFIT",
-	"version": "38",
+	"name": "MyFitnessPal Export for FOODFASTFIT by Bill",
+	"version": "38.1",
 	"content_scripts":
 	[
 		{
@@ -46,7 +46,7 @@
 	},
 	"permissions":
 	[
-		"http://foodfastfit.com/",
+		"https://foodfastfit.com/",
 		"storage"
 	]
 }
