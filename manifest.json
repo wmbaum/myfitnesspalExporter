@@ -1,0 +1,52 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+	"manifest_version": 2,
+	"name": "MyFitnessPal Data Exporter by FOODFASTFIT",
+	"version": "38",
+	"content_scripts":
+	[
+		{
+			"matches": [
+				"*://*.myfitnesspal.com/reports*"
+				, "*://*.myfitnesspal.com/*/reports*"
+			]
+			, "exclude_matches": [
+				"*://*.myfitnesspal.com/reports/printable_diary*"
+				, "*://*.myfitnesspal.com/*/reports/printable_diary*"
+			]
+			, "js": [
+				"jquery-2.1.0.min.js"
+				, "underscore-min.js"
+				, "content_script.js"
+			]
+		},
+		{
+			"matches": [
+				"*://*.foodfastfit.com/myfitnesspal-x-foodfastfit*"
+				, "*://*.foodfastfit.com/_/myfitnesspal-x-foodfastfit*"
+			],
+			"js":
+			[
+				"jquery-2.1.0.min.js",
+				"underscore-min.js",
+				"myfitnesspal_x_foodfastfit.js"
+			]
+		}
+	],
+	"web_accessible_resources":
+	[
+		"underscore-min.map"
+	],
+	"icons":
+	{
+		"16": "foodfastfit16.png",
+		"48": "foodfastfit48.png",
+		"128": "foodfastfit128.png"
+	},
+	"permissions":
+	[
+		"http://foodfastfit.com/",
+		"storage"
+	]
+}
